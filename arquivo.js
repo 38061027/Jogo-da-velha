@@ -44,10 +44,12 @@ function newMove(e) {
 function check() {
   let playerLastMove = player === "X" ? "O" : "X";
 
+  
   const items = selected
     .map((item, i) => [item, i])
     .filter((item) => item[0] === playerLastMove)
     .map((item) => item[1]);
+
 
   for (pos of positions) {
     if (pos.every((item) => items.includes(item))) {
