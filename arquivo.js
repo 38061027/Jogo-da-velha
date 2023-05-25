@@ -50,14 +50,14 @@ function check() {
     .filter((item) => item[0] === playerLastMove)
     .map((item) => item[1]);
 
-
-  for (pos of positions) {
-    if (pos.every((item) => items.includes(item))) {
-      alert("O JOGADOR '" + playerLastMove + "' GANHOU!");
-      init();
-      return;
+    for (let i = 0; i < positions.length; i++) {
+      let pos = positions[i];
+      if (pos.every((item) => items.includes(item))) {
+        alert("O JOGADOR '" + playerLastMove + "' GANHOU!");
+        init();
+        return;
+      }
     }
-  }
 
   if (selected.filter((item) => item).length === 9) {
     alert("DEU EMPATE!");
